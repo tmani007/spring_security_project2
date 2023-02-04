@@ -11,11 +11,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "TB_USER")
+@Setter
+@Getter
 public class UserModel implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter
-    @Getter
     private Long userId;
     @Column(nullable = false, unique = true)
     private String username;
