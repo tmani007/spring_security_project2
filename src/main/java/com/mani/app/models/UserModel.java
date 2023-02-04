@@ -1,22 +1,21 @@
 package com.mani.app.models;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "TB_USER")
 public class UserModel implements UserDetails {
-    //private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private UUID userId;
+    @Setter
+    @Getter
     private Long userId;
     @Column(nullable = false, unique = true)
     private String username;
@@ -62,21 +61,5 @@ public class UserModel implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
