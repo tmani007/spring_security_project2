@@ -9,7 +9,6 @@ import javax.validation.constraints.Size;
 @Setter
 @Getter
 public class ParkingSpotDto {
-
     @NotBlank
     private String parkingSpotNumber;
     @NotBlank
